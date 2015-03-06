@@ -194,6 +194,7 @@ margin-bottom: 5px;
 margin-left: 10px;
 }
 .chatBox .chatBox_content .chatMessage .msg_user .label {
+ cursor: pointer;
  font-size: 0.8em;
 }
 

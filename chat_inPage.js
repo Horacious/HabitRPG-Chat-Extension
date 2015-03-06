@@ -73,7 +73,12 @@ function createChatBox(chatBoxId) {
 			delete intervals.chatBoxId;
 			intervals[chatBoxId] = window.setInterval("updateChat('"+chatBoxId+"')", refreshRateFast);
 		});
-		
+    $('#'+chatBoxId).on('click', '.msg_user span', function() {
+      var name = '@' + $(this).text().trim();
+      var msg = $('#TA_'+chatBoxId).val().trim() + " " + name;
+      $('#TA_'+chatBoxId).val(msg)
+    });
+
 		updateChat(chatBoxId);
 		intervals[chatBoxId] = window.setInterval("updateChat('"+chatBoxId+"')", refreshRateFast);
 	}
